@@ -1,0 +1,25 @@
+@import "variables";
+
+/*resset*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: helvetica, sans-serif;
+    }
+    
+/*general*/
+    
+a {
+    text-decoration: none;
+    color: $complementary-color;
+}
+    
+ul {
+    list-style: none;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}

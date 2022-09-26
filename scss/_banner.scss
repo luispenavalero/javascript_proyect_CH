@@ -1,0 +1,91 @@
+@import "variables";
+
+/* banner desktop */
+
+.banner {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 92vh;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../img/principal_img.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        background: rgba(215, 209, 195, 0.126);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;    
+        height: 40%;
+        width: 50%; 
+        margin-right: 1%; 
+        justify-content: center;
+        align-items: center;     
+        text-align: center;
+        background: linear-gradient(90deg, rgba(40, 40, 40, 0), rgba(40, 40, 40, 0.893), rgb(38, 38, 38), rgb(20, 20, 20));
+        position: relative;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        color: $principal-color;
+    }
+
+    h2 { 
+        font-size: 1.5rem;
+        color: $principal-color;
+    }
+
+    &__link {
+        margin-top: 2vh;
+    }
+    
+    &__button {
+        height: 6vh;
+        width: 10vw;
+        border-radius: 0px;
+        border-width: 0px;
+        background-color: $principal-color;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $secondary-color;
+            border-width: 1px;
+            border-color: $principal-color;
+            color: $principal-color;
+        }
+    }
+
+}
+
+/* media queri mobile */
+
+@media (max-width: 600px) {
+
+    /*banner mobile*/
+    
+    .banner {
+        flex-direction: column;
+        justify-content: space-around;
+
+        &__text {
+            width: 100%;
+            margin: 0;  
+            background: none;      
+        }
+    
+        &__button {
+            width: 25vw;
+            font-size: 1.5rem;
+        }
+    }
+}

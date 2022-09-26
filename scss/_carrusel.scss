@@ -1,0 +1,209 @@
+@import "variables";
+
+/*carrusel*/
+
+.carrusel {
+    position: relative;   
+    z-index: 1; 
+
+    &__div {
+        height: 92vh;   
+        overflow: hidden;
+        position: relative; 
+    }
+}
+
+.img_mobile {
+    display: none;
+}
+
+.frame {
+    height: 100%;
+    width: 100%;  
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &__cards {
+        height: 100%;
+
+        img {
+            height: 100%;
+            width: 100vw;
+            filter: brightness(50%);
+        }
+    }
+
+    &__description {
+        position: absolute;
+        bottom: 3vh;
+        width: 75%;
+        text-align: center;
+        background: linear-gradient(0deg, rgba(30, 30, 30, 1), rgba(30, 30, 30, 0));
+        color: rgba(255, 255, 255, 0.459);
+
+        h2 {
+            padding-top: 2vh;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin: 2vh;
+        }
+    }
+
+    &__arrows {
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+
+        i {
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.416);
+
+            &:hover{
+                color: rgba(255, 255, 255, 0.893);
+            }
+        }
+    }
+
+/* extend - frame marks (The marks to the right, center and left 
+that correspond to the first, second and third images of the carousel) */
+
+    &__mark {
+        height: 2vh;
+        width: 75%;
+        position: absolute;
+        bottom: 2px;
+        display: flex;
+    }
+
+    &__mark--01 {
+        @extend .frame__mark;
+        justify-content: flex-start;
+    }
+
+    &__mark--02 {
+        @extend .frame__mark;
+        justify-content: center;
+    }
+
+    &__mark--03 {
+        @extend .frame__mark;
+        justify-content: flex-end;
+    }
+    
+}
+
+/* counter */
+
+.counter{
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    bottom: 2px;
+    align-items: center;
+    justify-content: center;
+
+    &__div {
+        width: 75%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            height: 2vh;
+            width: 33%;
+            background-color: rgba(218, 218, 218, 0.219);
+        }
+
+        &__icon {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.416);
+        }
+    }
+}
+
+/* galery marks */
+
+#mark_01 {
+    height: 100%;
+    width: 33%;
+    background-color: rgb(237, 237, 237);
+    margin-right: 3px;
+}
+
+#mark_02 {
+    height: 100%;
+    width: 33%;
+    background-color: rgb(237, 237, 237);
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#mark_03 {
+    height: 100%;
+    width: 33%;
+    background-color: rgb(237, 237, 237);
+    margin-left: 3px;
+}
+
+/* client marks */
+
+#mark_01client {
+    height: 100%;
+    width: 33%;
+    background-color: rgb(237, 237, 237);
+    margin-right: 3px;
+}
+
+#mark_02client {
+    height: 100%;
+    width: 33%;
+    background-color: rgb(237, 237, 237);
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#mark_03client {
+    height: 100%;
+    width: 33%;
+    background-color: rgb(237, 237, 237);
+    margin-left: 3px;
+}
+
+/* carrusel mobile */
+
+@media (max-width: 600px) {
+    .carrusel {
+
+        &__div {
+            height: 100vh; 
+        }
+    }
+
+    .frame__cards {
+
+        img {
+            background-position: top;
+        }
+    }
+
+    .img_desktop {
+        display: none;
+    }
+
+    .img_mobile {
+        display: block;
+    }
+
+
+
+}

@@ -1,0 +1,237 @@
+@import "variables";
+
+/* presentation */
+
+.us_presentation_div {
+    display: flex;
+    flex-direction: column;
+    height: 92vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url(../img/presentation_img.jpg);
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 10px 20px rgb(0, 0, 0), 
+    0 6px 6px rgba(0, 0, 0, 0.822);
+
+    &::before {
+        content: "";
+        background: rgba(215, 209, 195, 0.541);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+.us_title {
+    width: 100%;
+    font-size: 3rem;
+    z-index: 2;
+    color: $secondary-color;
+}
+
+.us_subtitle {
+    width: 100%;   
+    z-index: 2; 
+    color: $secondary-color;
+}
+
+.us_description {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    z-index: 2;
+    padding: 1%;
+    color: $secondary-color;
+}
+
+.us_presentation_div i {
+    font-size: 2rem;
+    color: $secondary-color;
+    position: absolute;
+    z-index: 1;
+    bottom: 2vh;
+}
+
+/* us title */
+
+.our_team_title_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    text-align: center;
+    background-color: $secondary-color;  
+
+    i {
+        font-size: 2rem;
+        display: none;
+    }
+}
+
+.our_team_title {
+    width: 100%;
+    font-size: 3rem;  
+    color: rgba(215, 209, 195, 0.68);
+}
+
+/* staff */
+
+.our_team_div {
+    display: flex;
+    height: 70vh;
+    background-color: rgba(29, 29, 29, 0.952);
+}
+
+.staff_member_div {
+    display: flex;
+    width: 25%;
+    margin-left: 1px;
+    margin-right: 1px;
+    flex-direction: column;
+    align-items: center;
+    background-color: $secondary-color; 
+}
+
+.staff_member_description_div {
+    height: 25vh;
+    width: 90%;
+}
+
+.staff_member_name {
+    text-align: center;
+    color: rgba(242, 178, 17, 0.475);
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.staff_member_position {
+    text-align: center;
+    color: rgba(215, 209, 195, 0.397);   
+}
+
+.staff_member_description {
+    text-align: justify;
+    font-size: 0.7rem;
+    color: rgba(215, 209, 195, 0.644);  
+    padding: 5%;
+}
+
+.staff_member_img_div {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+
+    img {
+        width: 80%;
+        height: 32vh;
+        filter: grayscale(100%);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.416), 0 6px 6px rgba(0, 0, 0, 0.416);  
+    }
+}
+
+.staff_member_rrss_div {
+    height: 6vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.staff_member_rrss_list {
+    display: flex;
+    margin: 0;
+    margin-top: 4vh;
+    padding: 0;
+    justify-content: space-evenly;
+    height: 75%;
+    width: 80%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    li {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        width: 20%;
+    }
+
+    img {
+        height: 100%;
+    }
+}
+
+.next_member i {
+    color: rgba(215, 209, 195, 0.68);
+    display: none;
+    margin-top: 12vh;
+    font-size: 2rem;
+}
+
+/*media queri mobile*/
+
+@media (max-width: 600px) {
+
+    /*presentation mobile */
+
+     .us_presentation_div {
+        height: 75vh;
+    }
+
+    .us_description {
+        width: 90%;
+        background-color: rgba(0, 0, 0, 0);
+        color: rgb(33, 33, 33);
+        font-size: 1.5rem;
+    }
+
+    .us_presentation_div i {
+        display: none;
+    }
+
+    /* staff mobile */
+
+    .our_team_div {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .our_team_title_div i {
+        display: block;
+        margin-top: 2vh;
+        color: rgba(215, 209, 195, 0.68);
+    }
+
+    .staff_member_div {
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        margin-bottom: 2px;
+    }
+
+    .staff_member_description_div {
+        height: 40vh;
+    }
+
+    .staff_member_description {
+        text-align: justify;
+        font-size: 1.5rem;
+    }
+
+    .staff_member_rrss_list {
+        margin-top: 4vh;
+        height: 100%;
+    }
+
+    .next_member i {
+        display: block;
+    }   
+}

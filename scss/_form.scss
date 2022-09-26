@@ -1,0 +1,156 @@
+@import "variables";
+
+/* form */
+
+.form__div {
+    width: 50%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $principal-color;
+    height: 77vh;
+    padding: 5vh;
+
+    label {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__input {
+        border-radius: 3px;
+        border: none;
+        width: 90%;
+        height: 5vh;
+        text-align: center;
+        margin-bottom: 2vh;
+    }
+
+    textarea {
+        border-radius: 3px;
+        border: none;
+        width: 90%;
+        height: 15vh;
+        text-align: center; 
+        resize: none;   
+    }
+    
+    &__radio {
+        border: 0;
+        display: flex;
+        font-size: 0.5rem;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        width: 50%;
+
+        &__button {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__submit {
+        display: flex;
+        border: 0;
+
+        &__button {
+            width: 50%;
+        }
+
+    }
+}
+
+fieldset {
+    border: 0;
+}
+
+/* mixin button form - active button style and innactive button style */
+
+@mixin button_form ($backgruound_color , $color, $boder_color) {
+    height: 6vh;
+    width: 10vw;
+    border-radius: 0px;
+    border-width: 1px;
+    background-color: $backgruound_color;
+    color:  $color;
+    border-color: $boder_color;
+    cursor: pointer;
+    margin-left: 2vh;
+    margin-right: 2vh;
+
+    &:hover {
+        background-color: $complementary-color;
+        color: $secondary-color;
+        border: none;
+    }
+}
+
+.button_form--01 {
+    @include button_form( $secondary-color, $principal-color, $principal-color);
+
+}
+
+.button_form--02 {
+    @include button_form( $principal-color, $secondary-color, $secondary-color);
+
+}
+
+
+/*media queri mobile*/
+
+@media (max-width: 600px) {
+
+    .form__div {
+        width: 100%;
+    }
+
+    .form {
+        height: 85vh;
+
+        label {
+            width: 100%;
+        }
+
+        &__input {
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;        
+        }
+
+        &__radio {
+            font-size: 1rem;
+            width: 100%;
+    
+            label {
+                text-align: center;
+            }
+
+            input {
+                width: 100%;
+                height: 1.5rem;
+            }
+        }
+
+        &__submit {
+
+            &__button {
+                width: 100%;                
+            }
+        }
+    }
+    
+    .button_form--01 {
+        width: 25vw;   
+    }
+
+    .button_form--02 {
+        width: 25vw;   
+    }
+}
