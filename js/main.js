@@ -98,20 +98,20 @@ alert("Tu presupuesto es de " + total + "$ \n Para hacer realidad este proyecto 
 // Condicional "Si es diseñador", incluye objeto, clase constructora.
 
 else if (tipoDeUsuario == 2) {
-bandaIngreso = "Ingresa el nombre de tu banda.";
+bandaIngreso = "Ingresa tu nombre.";
 correoIngreso = "Ingresa tu correo.";
 numeroIngreso = "Ingresa tu número de contacto.";
 formularioAviso = "Estamos emocionados por conocerte, te estaremos contactando a la brevedad.";
 
-let banda = promptIngreso(bandaIngreso);
+let nombreDi = promptIngreso(nombreDiIngreso);
 let correo = promptIngreso(correoIngreso);
 let numero = promptIngreso(numeroIngreso);
 
 //Clase constructora
 
 class datosEnviar {
-    constructor(banda, correo, numero) {
-        this.banda = banda;
+    constructor(nombreDi, correo, numero) {
+        this.nombreDi = nombreDi;
         this.correo = correo;
         this.numero = numero;
     }
