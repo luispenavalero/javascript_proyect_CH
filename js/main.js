@@ -98,7 +98,7 @@ alert("Tu presupuesto es de " + total + "$ \n Para hacer realidad este proyecto 
 // Condicional "Si es diseñador", incluye objeto, clase constructora.
 
 else if (tipoDeUsuario == 2) {
-bandaIngreso = "Ingresa tu nombre.";
+nombreDiIngreso = "Ingresa tu nombre.";
 correoIngreso = "Ingresa tu correo.";
 numeroIngreso = "Ingresa tu número de contacto.";
 formularioAviso = "Estamos emocionados por conocerte, te estaremos contactando a la brevedad.";
@@ -117,10 +117,10 @@ class datosEnviar {
     }
 }
 
-const misDatos = new datosEnviar(banda, correo, numero);
+const misDatos = new datosEnviar(nombreDi, correo, numero);
 
 
 // Aviso de formulario
 
-alert("Gracias por brindarnos tus datos de contacto " + misDatos.banda + "\nEstamos emocionados de contactarte por los siguientes medios: \n" + "\n" + misDatos.numero + "\n" + misDatos.correo);
+alert("Gracias por brindarnos tus datos de contacto " + misDatos.nombreDi+ "\nEstamos emocionados de contactarte por los siguientes medios: \n" + "\n" + misDatos.numero + "\n" + misDatos.correo);
 }
