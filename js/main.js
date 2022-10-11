@@ -1,46 +1,10 @@
-// 1. PRIMERA PARTE. 
-// Clave de acceso: Incluye funciones y ciclo while.
-
-// Asignación de funciones
-
-let solicitarClave = "Para comprobar que no eres un bot, te pedimos digites la palabra clave que figurará a continuación. \n \nIMPORTANTE: Debes substraer los guiones para descubrirla.";
-let claveDefinida = "h-a-che-de";
-
-// Función para carteles de aviso
-
-function aviso (variable){
-    alert(variable);
-}
-
-aviso(solicitarClave);
-
-// Funciones para ingreso por prompt
+// 1. PRIMERA PARTE
+// Diferencias tipo de usuario: incluye función, condicional y array
 
 function promptIngreso(preguntaPrompt){
     datoIngresado = 0;
     return datoIngresado = prompt(preguntaPrompt);
 }
-
-promptIngreso(claveDefinida);
-
-// Ciclo while
-
-function condicionClave(claveCorrecta) {
-
-    let solicitarClave = "Para comprobar que no eres un bot, te pedimos digites la palabra clave que figurará a continuación. \n \nIMPORTANTE: Debes substraer los guiones para descubrirla.";
-    let claveDefinida = "h-a-che-de";
-
-    while (claveCorrecta != "hachede"){
-
-        alert(solicitarClave);
-        claveCorrecta = prompt(claveDefinida);
-    }
-}
-
-condicionClave(datoIngresado);
-
-// 2. SEGUNDA PARTE
-// Diferencias tipo de usuario: incluye función y condicional
 
 // Prompt para ingresar tipo de usuario.
 
@@ -70,8 +34,8 @@ function switchFunction (switchKey) {
 switchFunction(tipoDeUsuario);
 
 
-// 2.1. COTIZADOR
-// Condicional "Si es músico el usuario"
+// COTIZADOR
+// Condicional "Si es músico el usuario", incluye array
 
 if (tipoDeUsuario == 1) {    
 
@@ -114,29 +78,24 @@ promptIngreso(poster);
 cost04 = contador(datoIngresado, 1000);
 
 
-// Función sumatoria de costos
+// Array de costos 
 
-function totalCost(item1, item2, item3, item4) {
+const sumatoriaCostos = [cost01, cost02, cost03, cost04];
 
-    return totalItems = item1 + item2 + item3 + item4;
+// Filtrado de costos (sumatoria)
 
-}
+const total = sumatoriaCostos.reduce((acc, el)=>{
+    return acc + el;
+},0);
 
-totalCost(cost01, cost02, cost03, cost04);
+// Aviso de resultado
 
-// Función de aviso de totalización
-
-function avisoSumatoria(variableSumatoria) {
-
-    alert("Tu presupuesto es de " + variableSumatoria + "$ \n Para hacer realidad este proyecto puedes dirigirte a nosotros en la etiqueta de contacto");
+alert("Tu presupuesto es de " + total + "$ \n Para hacer realidad este proyecto puedes dirigirte a nosotros en la etiqueta de contacto");
     
 }
 
-avisoSumatoria(totalItems);
-}
-
-// 2.2 FORMULARIO
-// Condicional "Si es diseñador"
+// FORMULARIO
+// Condicional "Si es diseñador", incluye objeto, clase constructora.
 
 else if (tipoDeUsuario == 2) {
 bandaIngreso = "Ingresa el nombre de tu banda.";
@@ -144,12 +103,24 @@ correoIngreso = "Ingresa tu correo.";
 numeroIngreso = "Ingresa tu número de contacto.";
 formularioAviso = "Estamos emocionados por conocerte, te estaremos contactando a la brevedad.";
 
-promptIngreso(bandaIngreso);
-promptIngreso(correoIngreso);
-promptIngreso(numeroIngreso);
+let banda = promptIngreso(bandaIngreso);
+let correo = promptIngreso(correoIngreso);
+let numero = promptIngreso(numeroIngreso);
+
+//Clase constructora
+
+class datosEnviar {
+    constructor(banda, correo, numero) {
+        this.banda = banda;
+        this.correo = correo;
+        this.numero = numero;
+    }
+}
+
+const misDatos = new datosEnviar(banda, correo, numero);
+
 
 // Aviso de formulario
 
-aviso(formularioAviso);
-
+alert("Gracias por brindarnos tus datos de contacto " + misDatos.banda + "\nEstamos emocionados de contactarte por los siguientes medios: \n" + "\n" + misDatos.numero + "\n" + misDatos.correo);
 }
