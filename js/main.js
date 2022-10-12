@@ -46,6 +46,22 @@ let identWeb = "¿Quieres un diseño de identidad web? \n Envía 1 para 'Sí' \n
 let pagWeb = "¿Quieres un diseño de página web? \n Envía 1 para 'Sí' \n Cualquier otro caracter para 'No'";
 let poster = "¿Quieres un diseño de poster? \n Envía 1 para 'Sí' \n Cualquier otro caracter para 'No'";
 
+// Productos
+
+class productos {
+    constructor(codigoProducto, nombreProducto, precioProducto) {
+        this.codigoProducto = codigoProducto;
+        this.nombreProducto = nombreProducto;
+        this.precioProducto = precioProducto;
+    }
+}
+
+const producto01 = new productos("DI01A", "Diseño de Portada", 2600);
+const producto02 = new productos("IW01A", "Identidad Web", 2400);
+const producto03 = new productos("PW01A", "Página Web", 2000);
+const producto04 = new productos("PO01A", "Poster", 1000);
+
+
 // Función del cotizador
 
 promptIngreso(albumCost);
@@ -63,19 +79,19 @@ function contador(paramContador, costo) {
 
 // Demás consultas a la función del prompt y el contador
 
-cost01 = contador(datoIngresado, 2600);
+cost01 = contador(datoIngresado, producto01.precioProducto);
 
 promptIngreso(identWeb);
 
-cost02 = contador(datoIngresado, 2400);
+cost02 = contador(datoIngresado, producto02.precioProducto);
 
 promptIngreso(pagWeb);
 
-cost03 = contador(datoIngresado, 2000);
+cost03 = contador(datoIngresado, producto03.precioProducto);
 
 promptIngreso(poster);
 
-cost04 = contador(datoIngresado, 1000);
+cost04 = contador(datoIngresado, producto04.precioProducto);
 
 
 // Array de costos 
@@ -87,6 +103,21 @@ const sumatoriaCostos = [cost01, cost02, cost03, cost04];
 const total = sumatoriaCostos.reduce((acc, el)=>{
     return acc + el;
 },0);
+
+// Detalle de la cotización
+
+const arrayProductos = [producto01, producto02, producto03, producto04];
+
+const detalleNombreProductos = arrayProductos.map((el)=> {    
+    return el.nombreProducto
+})
+
+const detallePrecioProductos = arrayProductos.map((el)=> {    
+    return el.precioProducto
+})
+
+
+alert("Los precios que se toman en cuenta son: " + "\n" + detalleNombreProductos[0] + ": " + detallePrecioProductos[0] + "\n" + detalleNombreProductos[1] + ": " +  detallePrecioProductos[1] + "\n" + detalleNombreProductos[2] + ": " +  detallePrecioProductos[2] + "\n" + detalleNombreProductos[3] + ": " +  detallePrecioProductos[3]);
 
 // Aviso de resultado
 
